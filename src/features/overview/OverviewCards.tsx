@@ -1,4 +1,4 @@
-import { Card } from "@/components/Card";
+import { MetricCard } from "./MetricCard";
 import { useAggregateInsights } from "@/hooks/useAggregateInsights";
 import { formatCurrency } from "@/utils/formatCurrency";
 import { formatNumber } from "@/utils/formatNumber";
@@ -18,21 +18,18 @@ export function OverviewCards() {
         marginBottom: "24px",
       }}
     >
-      <Card title="Total Campaigns" value={insights.total_campaigns} />
-      <Card title="Active Campaigns" value={insights.active_campaigns} />
-      <Card
+      <MetricCard title="Total Campaigns" value={insights.total_campaigns} />
+      <MetricCard title="Active Campaigns" value={insights.active_campaigns} />
+      <MetricCard
         title="Total Spend"
         value={formatCurrency(insights.total_spend)}
       />
-      <Card
+      <MetricCard
         title="Impressions"
         value={formatNumber(insights.total_impressions)}
       />
-      <Card
-        title="Clicks"
-        value={formatNumber(insights.total_clicks)}
-      />
-      <Card title="Avg CTR" value={`${insights.avg_ctr}%`} />
+      <MetricCard title="Clicks" value={formatNumber(insights.total_clicks)} />
+      <MetricCard title="Avg CTR" value={`${insights.avg_ctr}%`} />
     </div>
   );
 }
