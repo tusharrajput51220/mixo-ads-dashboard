@@ -1,4 +1,3 @@
-// src/pages/campaigns/[id].tsx
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { AppLayout } from "@/layout/AppLayout";
